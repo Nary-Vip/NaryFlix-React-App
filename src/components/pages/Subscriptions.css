@@ -1,0 +1,9 @@
+.cont{
+    height: 80vh;
+    width: 70vw;
+    background-color: blueviolet;
+    border-radius: 2rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}

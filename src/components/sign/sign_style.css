@@ -1,0 +1,76 @@
+.signpage{
+    padding: 2rem;
+    margin: 0;
+    background: #4B0B80;
+    /*background-image: url('Images/bg-1.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;*/    
+}
+
+.header{
+    height: fit-content;
+    width: max-content;
+    margin: 0 auto;
+}
+
+.box{
+    width: 500px;
+    height: auto;
+    margin: 0 auto;
+    padding: 1.1rem;
+    border-radius: .7rem;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(2px);
+}
+
+.box-title {
+    margin-top: 0;
+    margin-bottom: .5rem;
+    font-size: 1.2rem;
+}
+
+.shape {
+    position: absolute;
+    width: 130px;
+    top: .0rem;
+    left: .5rem;
+}
+
+input{
+    padding: 8px;
+    outline: none;
+    border-radius: 1rem;
+    background-color: rgb(243, 243, 252);
+}
+
+input:hover{
+    background-color: rgb(231, 231, 253);
+    outline: none;
+}
+
+label{
+    display:block;
+    padding: 3px 6px;
+    text-align: center;
+    width: 100px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+}
+
+.but{
+    cursor: pointer;
+    transition-duration: 0.5s;
+    padding: 10px 20px;
+    text-align: center;
+    background-color:lightblue;
+    color:darkcyan;
+    border: 1px solid gray;
+    border-radius: 1rem;
+    text-decoration: none;
+
+}
+.but:hover{
+    color: white;
+    background-color:darkturquoise;
+}
