@@ -3,7 +3,8 @@ import { useEffect, useState, useContext } from 'react';
 import Movie from './Movie';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import Loading from './Loading';
-import { ThemeContext } from '../Context/ThemeContext';
+import { Context } from '../Context/Context';
+
 
 const MoviesApi = (props) => {
     const [status, setstatus] = useState(true);
@@ -13,7 +14,7 @@ const MoviesApi = (props) => {
     const [isLoading, setisLoading] = useState(true);
 
     //Theme
-    const { theme } = useContext(ThemeContext);
+    const { theme, setProgress } = useContext(Context);
     //Theme Logic
     let th_title = {color : "white"};
 
@@ -37,23 +38,31 @@ const MoviesApi = (props) => {
 
 
     const fetchMovies = async () => {
+        setProgress(0);
         setisLoading(true);
         const movieResp = await fetch(featured_api);
+        setProgress(20);
         const moviesParsed = await movieResp.json();
+        setProgress(30);
         console.log(moviesParsed);
         if(moviesParsed.errors){
             setstatus(false);
+            setProgress(100);
         }
         else{
             if(movies === []){
+                setProgress(50);
                 setmovies(moviesParsed.results);
+                setProgress(70);
                 setTpage(moviesParsed.total_pages);
-                console.log(movies);
+                setProgress(100);
             }
             else{
+                setProgress(50);
                 setmovies(movies.concat(moviesParsed.results));
+                setProgress(70);
                 setTpage(moviesParsed.total_pages);
-                console.log(movies);
+                setProgress(100);
             }
         }
         setTimeout(setisLoading(false), 1000);

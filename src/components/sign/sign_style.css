@@ -2,10 +2,6 @@
     padding: 2rem;
     margin: 0;
     background: #4B0B80;
-    /*background-image: url('Images/bg-1.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;*/    
 }
 
 .header{
@@ -27,7 +23,6 @@
 .box-title {
     margin-top: 0;
     margin-bottom: .5rem;
-    font-size: 1.2rem;
 }
 
 .shape {

@@ -2,11 +2,11 @@ import React, { useContext } from 'react'
 import { Card, Badge } from 'react-bootstrap'
 import "./Movie.css";
 import { HiArrowUp } from "react-icons/hi";
-import { ThemeContext } from '../Context/ThemeContext';
+import { Context } from '../Context/Context';
 
 const Movie = (props) => {
     //Theme
-    const {theme , settheme } = useContext(ThemeContext);
+    const {theme , settheme } = useContext(Context);
     let card_bg = "light";
     let card_text = "dark";
 

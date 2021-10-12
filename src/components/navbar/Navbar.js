@@ -5,11 +5,11 @@ import * as AiIcons from "react-icons/ai";
 import { Link } from 'react-router-dom';
 import { SideBarData } from './SideBarData';
 import { IconContext } from 'react-icons';
-import { ThemeContext } from '../../Context/ThemeContext';
+import { Context } from '../../Context/Context';
 
 const Navbarr = () => {
     //Theme
-    const {theme , settheme } = useContext(ThemeContext);
+    const {theme , settheme, islogin, setislogin} = useContext(Context);
     //Theme-Logic
     let nav_bkg = "light";
     let nav_var = "light";
@@ -46,6 +46,11 @@ const Navbarr = () => {
             settheme("dark");
     }
 
+    const logout = ()=>{
+        setislogin("none");
+        localStorage.setItem('token', "none");
+    }
+
     
     return (
         <div className="nav-container">
@@ -74,10 +79,18 @@ const Navbarr = () => {
                         <Navbar.Collapse className="justify-content-center">
                             <Navbar.Brand as={Link} to="/">NaryFlix</Navbar.Brand>
                         </Navbar.Collapse>
-                        <Navbar.Collapse className="justify-content-end">
+                        {islogin==="none"?<Navbar.Collapse className="justify-content-end">
                                 <Nav.Link as = { Link } to="/signup">Sign UP</Nav.Link>
-                                <Nav.Link href="#link">Sign IN</Nav.Link>
-                        </Navbar.Collapse>
+                                <Nav.Link as={Link} to="/signin">Sign IN</Nav.Link>
+                        </Navbar.Collapse>: <Navbar.Collapse className="justify-content-end">
+                            Welcome, 
+                            <NavDropdown title={islogin} id="basic-nav-dropdown">
+                            <NavDropdown.Item href="/">MY ACCOUNT</NavDropdown.Item>
+                            <NavDropdown.Divider />
+                            <NavDropdown.Item onClick={logout}>LOG OUT</NavDropdown.Item>
+                            </NavDropdown>
+                        </Navbar.Collapse>}
+                        
                         
                     </Container>
                 </Navbar>
