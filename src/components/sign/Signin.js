@@ -55,7 +55,9 @@ const signin_chk = async () => {
                 username,
                 pwd
             })
-        }).then((res) => res.json())
+        }).then((res) => res.json()).catch((err)=>{
+            console.log(err);
+        })
 
         if (result.status === 'ok') {
             localStorage.setItem('token', result.tok);

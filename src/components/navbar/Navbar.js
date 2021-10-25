@@ -16,6 +16,7 @@ const Navbarr = () => {
     let nav_icons = {color: "black"};
     let nav_sid = {background: "rgba(233, 241, 255, 0.9)"};
     let nav_sid_txt = {color:"black"};
+    let nav_coll = {"color":"black"};
 
     if(theme === "light"){
         nav_bkg = theme;
@@ -23,6 +24,7 @@ const Navbarr = () => {
         nav_icons = {color: "black"};
         nav_sid = {background: "rgba(233, 241, 255, 0.9)"};
         nav_sid_txt = {color:"black"};
+        nav_coll = {"color":"black"};
     }
     if(theme === "dark"){
         nav_bkg = theme;
@@ -30,6 +32,7 @@ const Navbarr = () => {
         nav_icons = {color: "red"};
         nav_sid = {background: "linear-gradient(147deg, #000000 0%, #2c3e50 74%)"};
         nav_sid_txt = {color:"white"};
+        nav_coll = {"color":"white"};
     }
 
 
@@ -83,11 +86,11 @@ const Navbarr = () => {
                                 <Nav.Link as = { Link } to="/signup">Sign UP</Nav.Link>
                                 <Nav.Link as={Link} to="/signin">Sign IN</Nav.Link>
                         </Navbar.Collapse>: <Navbar.Collapse className="justify-content-end">
-                            Welcome, 
+                        <div style={nav_coll}>Welcome , </div>
                             <NavDropdown title={islogin} id="basic-nav-dropdown">
                             <NavDropdown.Item href="/">MY ACCOUNT</NavDropdown.Item>
                             <NavDropdown.Divider />
-                            <NavDropdown.Item onClick={logout}>LOG OUT</NavDropdown.Item>
+                            <NavDropdown.Item href="/" onClick={logout}>LOG OUT</NavDropdown.Item>
                             </NavDropdown>
                         </Navbar.Collapse>}
                         

@@ -1,7 +1,6 @@
-.image{
-    display: inline;
-    width: 70vw;
-    height: 70vh;
+.image_3{
+    width: 800px;
+    height: 450px;
 }
 
 .btn_1{
@@ -24,7 +23,6 @@
     cursor:pointer;
     transition-duration: 0.5s;
     position: relative;
-    display: inline-block;;
     padding: 15px 15px;
     text-align: center;
     width: 250px;
@@ -32,6 +30,8 @@
     color:floralwhite;
     border: 1px solid blue;
     border-radius: 5px;
+    margin: 0 auto;
+    display: block;
 }
 
 .btn_2:after {
@@ -53,12 +53,72 @@
     right: 20px;
 }
 
-.box{
-    width:auto;
-    height:auto;
-    padding: 1.5rem;
-    border-radius: .7rem;
-    -webkit-backdrop-filter: blur(5px);
-    backdrop-filter: blur(5px);
-    scroll-behavior: smooth;
+.cont-home{
+    margin-top: 7vh;
+}
+.flexy{
+    height: fit-content;
+    width: 85vw;
+    display: flex;
+    justify-content: space-around;
+}
+
+.flexy-btn{
+    margin: 40px;
+    width: 85vw;
+    display: flex;
+    justify-content: space-around;
+}
+
+.right-home{
+    margin-top: 15vh;
+}
+
+.p_1{
+    text-align: center;
+}
+
+.ifloggedin{
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.ft_1{
+    font-family:'Trebuchet MS';
+    font-size: xx-large;
+    color:blue;
+}
+
+.ft_2{
+    font-family:'Trebuchet MS';
+    font-size: xx-large;
+}
+
+.ft_3{
+    font-family:'Calibri';
+}
+
+.ft_4{
+    font-family:'Trebuchet MS';
+    color:blue;
+}
+
+.ft_5{
+    padding-left: 20px;
+    font-family:'Segoe UI';
+    margin: 20px;
+}
+
+.ft_6{
+    padding-left: 30px;
+    font-family:'Arial';
+    margin: 10px;
+}
+
+.ft_7{
+    float:right;
+}
+
+.btnn{
+    text-decoration: none;
 }

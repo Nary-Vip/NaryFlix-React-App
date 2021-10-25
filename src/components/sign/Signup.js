@@ -24,7 +24,8 @@ const Signup = () => {
         var email = document.getElementById("mail_inp");
         var phone =  document.getElementById("no_inp");
         var pwd = document.getElementById("pwd_inp");
-        
+        let img = document.getElementById("img_inp");
+
         if (username.value === "") {
             username.focus();
             return false;
@@ -53,6 +54,7 @@ const Signup = () => {
         let em = email.value;
         let ph = phone.value;
         let pw = pwd.value;
+        let im = img.value;
 
         //If all succeeded
         const result = await fetch('http://localhost:5500/api/register', {
@@ -65,6 +67,7 @@ const Signup = () => {
                 pw,
                 em,
                 ph,
+                im
             })
         }).then((res) => res.json())
 
@@ -101,7 +104,7 @@ const Signup = () => {
                     <h1 className="box-title">
                         <h2 className="header" style = {font_col}>SIGN UP</h2>
                     </h1>
-                    <form name="Signup_form">
+                    <form name="Signup_form" encType="multipart/form-data">
                         <Alert style={{"margin": "15px"}} variant={alert_variant}>
                             <center><p className="m-auto">{alert_message} {alert_message==="Already have a account?"?<Link to="/signin">sign in</Link>:""}</p></center>
                         </Alert>
@@ -117,6 +120,9 @@ const Signup = () => {
 
                         <br /><br /><br />
                         <label style = {font_col}>Contact no:</label><input id="no_inp" type="text" name="Contact_no" placeholder="Phone number" style={{ padding: "10px 10px; width:180px" }} />
+
+                        <br /><br /><br />
+                        <label style = {font_col}>Choose profile</label><input id="img_inp" type="file" name="profileImg" style={{ padding: "10px 10px; width:180px" }} />
 
                         <br /><br /><br /><br />
                         <center>

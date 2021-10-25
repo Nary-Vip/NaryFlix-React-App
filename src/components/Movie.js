@@ -6,7 +6,7 @@ import { Context } from '../Context/Context';
 
 const Movie = (props) => {
     //Theme
-    const {theme , settheme } = useContext(Context);
+    const {theme} = useContext(Context);
     let card_bg = "light";
     let card_text = "dark";
 

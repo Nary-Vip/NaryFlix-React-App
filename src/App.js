@@ -10,12 +10,12 @@ import Home from './components/pages/Home';
 import Signup from './components/sign/Signup';
 import LoadingBar from 'react-top-loading-bar'
 import Signin from './components/sign/Signin';
-import jwt from 'jsonwebtoken';
+import About from './components/pages/about/About';
 require('dotenv/config'); //DB_CONNECTION
 
 
 function App() {
-  let JWT_SEC =  "saltnaryvip";   
+  let JWT_SEC =  "saltnaryvip";
 
   const [progress, setProgress] = useState(0)
 
@@ -23,13 +23,31 @@ function App() {
 
   const [islogin, setislogin] = useState("none");
 
-  useEffect(() => {
+  useEffect(async() => {
     if(localStorage.getItem('token')){
       let tkn = localStorage.getItem('token');
       console.log(JWT_SEC);
       if(tkn!="none"){
-        const tok2usr = jwt.verify(tkn, JWT_SEC); 
-        setislogin(tok2usr.username);
+        try {
+          const result = await fetch("http://localhost:5500/api/login_chk", {
+            method: 'POST',
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+              tok_key: tkn
+            })
+          }).then((res) => res.json())
+          .catch((err)=>{
+            console.log(err);
+          })
+          console.log(result);
+          setislogin(result.username);
+          
+
+        } catch (error) {
+          console.log(error)
+        }
       }
     }
     else{
@@ -92,6 +110,12 @@ function App() {
             <Route exact path="/subs">
               <div className="App">
                 <Susbcriptions />
+              </div>
+            </Route>
+
+            <Route exact path="/about">
+              <div className="App">
+                <About/>
               </div>
             </Route>
 

@@ -1,11 +1,12 @@
 import React, { useContext } from 'react'
 import { Context } from '../../Context/Context';
 import cover from "./bg-3.png";
-import "./home_style.css"
+import "./home_style.css";
+import { Link } from "react-router-dom";
 
 function Home() {
     //Theme
-    const { theme } = useContext(Context);
+    const { theme, islogin } = useContext(Context);
     //THeme logic
     let hom = { color: "black" };
 
@@ -18,36 +19,56 @@ function Home() {
 
     }
     return (
-        <div style={hom}>
-            <div class="box">
-                <img src={cover} className="image" style={{"align":"left"}} />
-                <p>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <font style={{"face":'Segoe UI', "size":"40"}}>
-                        Welcome To Nary Flix
-                    </font>
+        <div className="container cont-home" style={hom}>
+            <div className="flexy">
+                <div className="left-home">
+                    <img src={cover} className="image_3" />
+                </div>
+                <div className="right-home">
+                    <p className="p_2">
+                        {islogin==="none"?
+                        <h1 className="ft_5">
+                            Welcome to Nary Flix
+                        </h1>:
+                        <p className="ft_5">
+                            <h1 className="ifloggedin">Hi, {islogin}</h1>
+                            <h3>Welcome back to Nary Flix</h3>
+                        </p>
+                        }
 
-                    <font face="Arial" size="3">
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        Enjoy exclusive shows and series only available in Nary Flix
-
-                        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        along with 1000+ movies and TV shows.
-                    </font>
-                </p>
-
-                <text style={{"float": "right"}}>
-                    <a href="" style={{"text-decoration": "none"}}>
-                        <button type="button" class="btn_2">Subscribe Now!</button>
-                    </a>
-                </text>
-
-                <center>
-                    <a href="sign_in.html" style={{"text-decoration": "none"}}>
-                        <button type="button" class="btn_2">Go to Login page</button>
-                    </a>
-                </center>
+                        <div className="ft_6">
+                            Enjoy exclusive shows and series only available in Nary Flix
+                            along with 1000+ movies and TV shows.
+                        </div>
+                    </p>
+                </div>
             </div>
+
+            {islogin==="none"?
+            <div className="flexy-btn">
+                <div className="btn-left">
+                    <div className="ft_7">
+                        <Link to="subs" className="btn">
+                            <button type="button" className="btn_2">Subscribe Now!</button>
+                        </Link>
+                    </div>
+                </div>
+                <div className="btn-right">
+                    <Link to="/signin" className="btnn">
+                        <button type="button" className="btn_2">Sign IN</button>
+                    </Link>
+                </div>
+            </div>:
+            <div className="flexy-btn">
+                <div className="btn-left" style={{"margin-top": "30px"}}>
+                    <div className="ft_7">
+                        <Link to="subs" className="btn">
+                            <button type="button" className="btn_2">Recommended watch</button>
+                        </Link>
+                    </div>
+                </div>
+            </div>}
+
         </div>
     )
 }
