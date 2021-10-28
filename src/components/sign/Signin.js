@@ -76,8 +76,7 @@ const signin_chk = async () => {
 }
 
 return (
-    <div>
-        <img class="shape" src="Images/lg.png" />
+    <div className="container">
         <center>
             <div class="box">
                 <div className="box-title">

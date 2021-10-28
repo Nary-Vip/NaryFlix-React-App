@@ -1,9 +1,3 @@
-.signpage{
-    padding: 2rem;
-    margin: 0;
-    background: #4B0B80;
-}
-
 .header{
     height: fit-content;
     width: max-content;
@@ -12,12 +6,9 @@
 
 .box{
     width: 500px;
-    height: auto;
     margin: 0 auto;
     padding: 1.1rem;
     border-radius: .7rem;
-    -webkit-backdrop-filter: blur(5px);
-    backdrop-filter: blur(2px);
 }
 
 .box-title {

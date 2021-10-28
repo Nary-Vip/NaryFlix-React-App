@@ -24,7 +24,6 @@ const Signup = () => {
         var email = document.getElementById("mail_inp");
         var phone =  document.getElementById("no_inp");
         var pwd = document.getElementById("pwd_inp");
-        let img = document.getElementById("img_inp");
 
         if (username.value === "") {
             username.focus();
@@ -50,11 +49,11 @@ const Signup = () => {
             pwd.focus();
             return false;
         }
+
         let un = username.value;
         let em = email.value;
         let ph = phone.value;
         let pw = pwd.value;
-        let im = img.value;
 
         //If all succeeded
         const result = await fetch('http://localhost:5500/api/register', {
@@ -66,8 +65,7 @@ const Signup = () => {
                 un,
                 pw,
                 em,
-                ph,
-                im
+                ph
             })
         }).then((res) => res.json())
 
@@ -120,9 +118,6 @@ const Signup = () => {
 
                         <br /><br /><br />
                         <label style = {font_col}>Contact no:</label><input id="no_inp" type="text" name="Contact_no" placeholder="Phone number" style={{ padding: "10px 10px; width:180px" }} />
-
-                        <br /><br /><br />
-                        <label style = {font_col}>Choose profile</label><input id="img_inp" type="file" name="profileImg" style={{ padding: "10px 10px; width:180px" }} />
 
                         <br /><br /><br /><br />
                         <center>

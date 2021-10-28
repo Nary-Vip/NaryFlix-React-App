@@ -4,7 +4,7 @@ import Movie from './Movie';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import Loading from './Loading';
 import { Context } from '../Context/Context';
-
+import "./MoviesApi.css"
 
 const MoviesApi = (props) => {
     const [status, setstatus] = useState(true);
@@ -81,7 +81,7 @@ const MoviesApi = (props) => {
     },[])
 
     return (
-        <div>
+        <div className="master-show">
             {(status)?(
                 <div>
                     <InfiniteScroll

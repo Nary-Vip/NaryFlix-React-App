@@ -57,6 +57,7 @@ function App() {
   });
   //Theme logic 
   let page_bg = {background: "linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%)"};
+
   if(theme === "light"){
     page_bg = {background: "linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%)"};
   }

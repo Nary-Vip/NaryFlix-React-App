@@ -6,7 +6,7 @@
 }
 
 .App{
-  height: 100vh;
+  height: max-content;
   color: black;
   padding-bottom: 70px;
   margin-top: 80px;
