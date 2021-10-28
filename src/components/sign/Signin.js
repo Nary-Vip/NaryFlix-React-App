@@ -76,7 +76,7 @@ const signin_chk = async () => {
 }
 
 return (
-    <div className="container">
+    <div>
         <center>
             <div class="box">
                 <div className="box-title">

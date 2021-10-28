@@ -1,10 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap');
-
-.section{
+.abt-section{
 	font-family: 'Poppins', sans-serif;
 	width: 100%;
-	min-height: 100vh;
-	background-color: rgb(241, 240, 240);
 }
 
 .abt-container{
@@ -94,10 +90,10 @@
 
 @media screen and (max-width: 768px){
 	.abt-container{
-	width: 80%;
-	display: block;
-	margin:auto;
-	padding-top:50px;
+		width: 80%;
+		display: block;
+		margin:auto;
+		padding-top:50px;
 	}
 
 	.content-section{

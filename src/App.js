@@ -4,13 +4,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import MoviesApi from './components/MoviesApi';
 import Navbar from './components/navbar/Navbar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Susbcriptions from './components/pages/Susbcriptions';
 import { Context } from './Context/Context';
 import Home from './components/pages/Home';
 import Signup from './components/sign/Signup';
 import LoadingBar from 'react-top-loading-bar'
 import Signin from './components/sign/Signin';
 import About from './components/pages/about/About';
+import Susbcription from './components/pages/subs/Subsciption';
+import PageNotFound from './components/pageNotFound/PageNotFound';
 require('dotenv/config'); //DB_CONNECTION
 
 
@@ -53,8 +54,9 @@ function App() {
     else{
       localStorage.setItem('token', "none");
     }
-    
-  });
+    // eslint-disable-next-line
+  },[]);
+
   //Theme logic 
   let page_bg = {background: "linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%)"};
 
@@ -91,33 +93,39 @@ function App() {
             </Route>
 
             <Route exact path="/signin">
-              <div className="App" style={page_bg}>
+              <div className="staticApp" style={page_bg}>
                 {islogin==="none"?<Signin/>:<Home/>}
               </div>
             </Route>
 
             <Route exact path="/movies">
               <div className="App" style={page_bg}>
-                <MoviesApi category="Movies" key="mov" />
+                {islogin==="none"?<Signin />:<MoviesApi category="Movies" key="mov" />}
               </div>
             </Route>
 
             <Route exact path="/series">
               <div className="App" style={page_bg}>
-                <MoviesApi category="Series" key="ser" />
+              {islogin==="none"?<Signin />:<MoviesApi category="Series" key="ser" />}
               </div>
             </Route>
 
             <Route exact path="/subs">
-              <div className="App">
-                <Susbcriptions />
+              <div className="staticApp" style={page_bg}>
+                <Susbcription/>
               </div>
             </Route>
 
             <Route exact path="/about">
-              <div className="App">
+              <div className="staticApp" style={page_bg}>
                 <About/>
               </div>
+            </Route>
+
+            <Route>
+            <div className="staticApp" style={page_bg}>
+                <PageNotFound/>
+            </div>
             </Route>
 
           </Switch>

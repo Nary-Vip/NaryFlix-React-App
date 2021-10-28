@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import "./style.css";
+import "./about-style.css";
 import abt_pic from "./aboutus.png";
 import { Context } from '../../../Context/Context';
 
@@ -8,26 +8,24 @@ const About = () => {
     const {theme} = useContext(Context);
 
 	let them_col = {
-		"background": "rgb(241, 240, 240)"
+		"color": "black"
 	}
 
 	//Theme-Logic
     if(theme === "light"){
         them_col = {
-			"background": "rgb(241, 240, 240)",
 			"color": "black"
 		}
     }
     if(theme === "dark"){
         them_col = {
-			"background": "linear-gradient(315deg, #2d3436 0%, #000000 74%)",
 			"color": "white"
 		}
     }
 
 	return (
 		<div>
-			<div className="section" style={them_col}>
+			<div className="abt-section" style={them_col}>
 				<div className="abt-container">
 					<div className="content-section">
 						<div className="abt-title">
@@ -51,7 +49,7 @@ const About = () => {
 						</div>
 					</div>
 					<div className="image-section">
-						<img src={abt_pic}/>
+						<img src={abt_pic} alt=""/>
 					</div>
 				</div>
 			</div>

@@ -18,6 +18,9 @@ const Navbarr = () => {
     let nav_sid_txt = {color:"black"};
     let nav_coll = {"color":"black"};
 
+    if(localStorage.getItem("theme")){
+        settheme(localStorage.getItem("theme"));
+    }
     if(theme === "light"){
         nav_bkg = theme;
         nav_var = theme;
@@ -43,10 +46,12 @@ const Navbarr = () => {
 
     const themeSwitch2Light= ()=>{
         settheme("light");
+        localStorage.setItem('theme', "light");
     }
 
     const themeSwitch2Dark= ()=>{
             settheme("dark");
+            localStorage.setItem('theme', "dark");
     }
 
     const logout = ()=>{

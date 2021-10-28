@@ -96,7 +96,7 @@ const Signup = () => {
     }
 
     return (
-        <div className="container">
+        <div>
             <div className="singpage">
                 <div className="box">
                     <h1 className="box-title">

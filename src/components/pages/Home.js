@@ -22,7 +22,7 @@ function Home() {
         <div className="container cont-home" style={hom}>
             <div className="flexy">
                 <div className="left-home">
-                    <img src={cover} className="image_3" />
+                    <img src={cover} className="image_3" alt="" />
                 </div>
                 <div className="right-home">
                     <p className="p_2">
@@ -62,7 +62,7 @@ function Home() {
             <div className="flexy-btn">
                 <div className="btn-left" style={{"margin-top": "30px"}}>
                     <div className="ft_7">
-                        <Link to="subs" className="btn">
+                        <Link to="/movies" className="btn">
                             <button type="button" className="btn_2">Recommended watch</button>
                         </Link>
                     </div>

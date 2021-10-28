@@ -78,6 +78,7 @@ const MoviesApi = (props) => {
 
     useEffect(() => {
         fetchMovies();
+        // eslint-disable-next-line
     },[])
 
     return (
