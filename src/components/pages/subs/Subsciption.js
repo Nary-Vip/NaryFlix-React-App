@@ -7,25 +7,34 @@ import { Link } from "react-router-dom";
 
 const Susbcription = () => {
 	//Theme
-    const { theme } = useContext(Context);
-    //Theme Logic
-    let bg_col = {color : "black"};
+	const { theme, subscriptionPlan, setsubscriptionPlan } = useContext(Context);
+
+	//Theme Logic
+	let bg_col = { color: "black" };
 	let but_col = {
 		color: "black"
 	};
 
-    if(theme === "light"){
-        bg_col = {color : "black"};
+	if (theme === "light") {
+		bg_col = { color: "black" };
 		but_col = {
 			color: "black"
 		}
-    }
-    if(theme === "dark"){
-        bg_col = {color : "white"};
+	}
+	if (theme === "dark") {
+		bg_col = { color: "white" };
 		but_col = {
 			color: "white"
 		}
-    }
+	}
+
+	const sub2mob = ()=>{
+		setsubscriptionPlan("Mobile");
+	}
+	
+	const sub2prem = ()=>{
+		setsubscriptionPlan("Premium");
+	}
 
 	return (
 		<div className="subs-page" style={bg_col}>
@@ -43,7 +52,7 @@ const Susbcription = () => {
 							<span>per month</span>
 						</li>
 						<li>
-							<Link className="button" to="/subscribed" style={but_col}>Join Now</Link>
+							<Link className="button" onClick={sub2mob} to="/subscribed" style={but_col}>Join Now</Link>
 						</li>
 					</ul>
 				</div>
@@ -61,7 +70,7 @@ const Susbcription = () => {
 							<span>per month</span>
 						</li>
 						<li>
-							<Link className="button" to="/subscribed" style={but_col}>Join Now</Link>
+							<Link className="button" onClick={sub2prem} to="/subscribed" style={but_col}>Join Now</Link>
 						</li>
 					</ul>
 				</div>

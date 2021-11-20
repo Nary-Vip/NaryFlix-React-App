@@ -93,7 +93,7 @@ const Navbarr = () => {
                         </Navbar.Collapse>: <Navbar.Collapse className="justify-content-end">
                         <div style={nav_coll}>Welcome , </div>
                             <NavDropdown title={islogin} id="basic-nav-dropdown">
-                            <NavDropdown.Item href="/">MY ACCOUNT</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to="/profile">MY ACCOUNT</NavDropdown.Item>
                             <NavDropdown.Divider />
                             <NavDropdown.Item href="/" onClick={logout}>LOG OUT</NavDropdown.Item>
                             </NavDropdown>

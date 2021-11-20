@@ -1,6 +1,8 @@
 .image_3{
     width: 800px;
     height: 450px;
+    border-radius: 1rem;
+    box-shadow: 2px 2px 2px 2px #B026FF;
 }
 
 .btn_1{
@@ -82,6 +84,7 @@
 .ifloggedin{
     margin: 0 auto;
     margin-bottom: 20px;
+    font-family: 'Pacifico', 'cursive';
 }
 
 .ft_1{
@@ -114,6 +117,7 @@
     padding-left: 30px;
     font-family:'Arial';
     margin: 10px;
+    font-family: 'PT Sans Narrow', sans-serif;
 }
 
 .ft_7{
@@ -122,4 +126,8 @@
 
 .btnn{
     text-decoration: none;
+}
+
+.welcome_msg{
+    font-family: 'PT Sans Caption', sans-serif;
 }

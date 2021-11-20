@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect} from 'react';
 import "./sign_style.css";
 import { Context } from '../../Context/Context';
 import { Link } from 'react-router-dom';
@@ -6,7 +6,7 @@ import { Alert } from 'react-bootstrap';
 
 const Signin = () => {
     //Theme
-    const { theme, setislogin } = useContext(Context);
+    const { theme, setislogin, setcompleteProfile} = useContext(Context);
     //Theme logic
     let font_col = { color: "white" };
 
@@ -62,6 +62,12 @@ const signin_chk = async () => {
         if (result.status === 'ok') {
             localStorage.setItem('token', result.tok);
             setislogin(username);
+            setcompleteProfile({username: result.username, 
+                email: result.email,
+                phone: result.phone, 
+                dj: result.dj, 
+                subsPlan: result.subsPlan
+              });
             alert_msg_changer("Successfully logged in", "success");
             usr.value="";
             pw.value="";
@@ -73,6 +79,7 @@ const signin_chk = async () => {
 
         console.log(result);
     }
+
 }
 
 return (
@@ -89,7 +96,7 @@ return (
                 <form name="Signin_form">
 
                     <br /><br />
-                    <label style={font_col}>Email Id:</label><input id="mail" type="text" name="user_name" placeholder="Email-id" />
+                    <label style={font_col}>Username:</label><input id="mail" type="text" name="user_name" placeholder="Your Username" />
 
                     <br /><br /><br />
                     <label style={font_col}>Password:</label><input id="pwd" type="password" name="pwd" placeholder="Password" />

@@ -93,7 +93,7 @@ const MoviesApi = (props) => {
                     >
                         <div className="container">
                             <div style={{display: 'flex', justifyContent: 'center', color:"black"}}>
-                                <h1 style={th_title}>{props.category} Section</h1>
+                                <h1 className="movSer" style={th_title}>{props.category} Section</h1>
                             </div>
                             
                             <div className="row">

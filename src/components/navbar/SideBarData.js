@@ -26,7 +26,7 @@ export const SideBarData = [
     {
         title: "Subscription",
         path: "/subs",
-        icon: <AiIcons.AiFillHome/>,
+        icon: <i class="fas fa-rupee-sign"></i>,
         className: 'nav-text'
     }
 ];

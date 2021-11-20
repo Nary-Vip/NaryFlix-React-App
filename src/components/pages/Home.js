@@ -32,7 +32,7 @@ function Home() {
                         </h1>:
                         <p className="ft_5">
                             <h1 className="ifloggedin">Hi, {islogin}</h1>
-                            <h3>Welcome back to Nary Flix</h3>
+                            <h3 className="welcome_msg">Welcome back to Nary Flix</h3>
                         </p>
                         }
 
@@ -60,7 +60,7 @@ function Home() {
                 </div>
             </div>:
             <div className="flexy-btn">
-                <div className="btn-left" style={{"margin-top": "30px"}}>
+                <div className="btn-left" style={{"marginTop": "30px"}}>
                     <div className="ft_7">
                         <Link to="/movies" className="btn">
                             <button type="button" className="btn_2">Recommended watch</button>
